@@ -30,5 +30,5 @@ io.sockets.on('connect', function(socket){
 	});
 });
 
-server.listen(port);
+server.listen('61988');
 console.log('Local host is running');
