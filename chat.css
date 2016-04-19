@@ -1,0 +1,12 @@
+#chatWindow{
+	position: absolute;
+	left: 55%;
+}
+.im{
+	position: absolute;
+	left: 55%;
+}
+#message{
+	position: absolute;
+	left: 50%;
+}

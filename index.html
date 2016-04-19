@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+	<link rel="stylesheet" type="text/css" href="chat.css">
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+	<script type="text/javascript">
+		var socketio = io.connect('127.0.0.1:8000');
+		socketio.on('message_to_client', function(data){
+			document.getElementById('chatWindow').innerHTML += ('<div class="im">' + data.message + '</div>' + '<div class="time"> - Sent at ' + data.date + '</div>');
+			console.log(data);
+		});
+		// console.log(socketio);
+		function sendMessage(){
+			var message = document.getElementById('message').value;
+			socketio.emit('message_to_server', {message: message})
+			event.preventDefault();
+		};
+	</script>
+	<style type="text/css">
+
+	#chatWindow{
+
+}
+	.time{
+		color: black;
+	}
+	.im{
+	border: 1px solid black;
+	color: red;
+}
+	#message{
+	position: fixed;
+	top: 10%;
+	left: 40%;
+}
+
+	</style>
+</head>
+
+<body>
+<h1>What up Dawg?</h1>
+	<div id="chatWindow">
+</div>
+	<form onsubmit="sendMessage()">
+		<input type="text" id="message" placeholder="Type your message here">
+	</form>
+
+</body>
+</html>
