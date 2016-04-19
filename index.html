@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<script type="text/javascript">
-		var socketio = io.connect('https://dry-hollows-42075.herokuapp.com');
+		var socketio = io.connect('https://damp-spire-61988.herokuapp.com');
 		socketio.on('message_to_client', function(data){
 			document.getElementById('chatWindow').innerHTML += ('<div class="im">' + data.message + '</div>' + '<div class="time"> - Sent at ' + data.date + '</div>');
 			console.log(data);
