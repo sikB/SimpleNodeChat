@@ -4,7 +4,7 @@ var port = process.env.PORT || '8000';
 var server = http.createServer(function(req,res){
 	fs.readFile('index.html', 'utf-8', function(error, data){
 		res.writeHead(200, {'content-type': 'text/html'});
-		res.write('<script>var port=' +port+'</script>');
+		// res.write('<script>var port=' +port+'</script>');
 		res.write(data);
 		res.end();
 	});
