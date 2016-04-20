@@ -5,6 +5,7 @@
   "main": "chat.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node chat.js"
   },
   "author": "Bogdan",
   "license": "ISC",
